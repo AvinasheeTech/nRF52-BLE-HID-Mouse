@@ -1,0 +1,44 @@
+// To get started, press Ctrl+Space to bring up the completion menu and view the available nodes.
+
+// You can also use the buttons in the sidebar to perform actions on nodes.
+// Actions currently available include:
+
+// * Enabling / disabling the node
+// * Adding the bus to a bus
+// * Removing the node
+// * Connecting ADC channels
+
+// For more help, browse the DeviceTree documentation at https://docs.zephyrproject.org/latest/guides/dts/index.html
+// You can also visit the nRF DeviceTree extension documentation at https://docs.nordicsemi.com/bundle/nrf-connect-vscode/page/guides/ncs_configure_app.html#devicetree-support-in-the-extension
+
+/* Define four GPIO input pins */
+/{
+    ButtonSignals
+      {
+         compatible = "gpio-keys";
+          input_signal1: input_signal1
+          {
+            /*Button input 1 at pin 0.13*/
+             gpios = <&gpio0 13 (GPIO_PULL_UP | GPIO_ACTIVE_LOW)>;
+             label = "BUTTON_1";
+          };
+          input_signal2: input_signal2
+          {
+            /*Button input 2 at pin 0.09*/
+             gpios = <&gpio0 9 (GPIO_PULL_UP | GPIO_ACTIVE_LOW)>;
+             label = "BUTTON_2";
+          };
+          input_signal3: input_signal3
+          {
+            /*Button input 3 at pin 0.15*/
+             gpios = <&gpio0 15 (GPIO_PULL_UP | GPIO_ACTIVE_LOW)>;
+             label = "BUTTON_3";
+          };
+          input_signal4: input_signal4
+          {
+            /*Button input 4 at pin 0.10*/
+             gpios = <&gpio0 10 (GPIO_PULL_UP | GPIO_ACTIVE_LOW)>;
+             label = "BUTTON_4";
+          };
+      };
+};
